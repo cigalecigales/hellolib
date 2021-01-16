@@ -13,7 +13,7 @@ describe('trim test', (): void => {
 
   test('right space', (): void => {
     const response: string = trim('test   ');
-    expect(response).toBe('test');
+    expect(response).toBe(' test');
   });
 
   test('left&right space', (): void => {
