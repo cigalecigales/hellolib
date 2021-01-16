@@ -76,7 +76,7 @@ export default [
         format: 'es',
         sourcemap: 'inline',
         banner,
-        exports: 'named', // TODO what??
+        exports: 'named',
       },
     ],
     external: [
@@ -85,9 +85,16 @@ export default [
     ],
     plugins: [
       pluginTypescript(),
+      pluginCommonjs({
+        // search for files other than .js files (must already be transpiled by a previous plugin!)
+        extensions: ['.js', '.ts'],
+      }),
       pluginBabel({
         babelHelpers: 'bundled',
         configFile: path.resolve(__dirname, '.babelrc.js'),
+      }),
+      pluginNodeResolve({
+        browser: true,
       }),
     ],
   },
@@ -101,7 +108,7 @@ export default [
         format: 'cjs',
         sourcemap: 'inline',
         banner,
-        // exports: 'default',
+        exports: 'default',
       },
     ],
     external: [
@@ -110,9 +117,16 @@ export default [
     ],
     plugins: [
       pluginTypescript(),
+      pluginCommonjs({
+        // search for files other than .js files (must already be transpiled by a previous plugin!)
+        extensions: ['.js', '.ts'],
+      }),
       pluginBabel({
         babelHelpers: 'bundled',
         configFile: path.resolve(__dirname, '.babelrc.js'),
+      }),
+      pluginNodeResolve({
+        browser: false,
       }),
     ],
   },

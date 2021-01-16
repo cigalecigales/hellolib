@@ -2,9 +2,9 @@
   "name": "@cigalecigales/hellolib",
   "version": "1.0.0",
   "description": "This is a javascript sample library.",
-  "main": "dist/helloJsLib.cjs.js",
-  "module": "dist/helloJsLib.es.js",
-  "browser": "dist/helloJsLib.js",
+  "main": "dist/hellolib.cjs.js",
+  "module": "dist/hellolib.es.js",
+  "browser": "dist/hellolib.js",
   "author": "cigalecigales",
   "license": "MIT",
   "scripts": {
@@ -22,7 +22,7 @@
     },
     "globals": {
       "ts-jest": {
-        "tsConfig": "tsconfig.json"
+        "tsconfig": "tsconfig.json"
       }
     },
     "testMatch": [
